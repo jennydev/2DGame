@@ -18,19 +18,38 @@ body {
     border-radius: 5px;
     white-space: nowrap;
     text-align: center; margin: 1em 0;
+    border: 1px solid rgba(0,0,0,0.5);
+    cursor: pointer;
 }
+
+.block:hover {
+    border: 1px solid rgb(207, 232, 243);
+}
+
+.block.active {
+    border: 1px solid yellow;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
+    -moz-box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
+    box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
+}
+
 .black-block{
     background-color: rgba(0,0,0,0.2);
 }
+
 .white-block{
     background-color: rgba(255,255,255,0.2);
 }
 
 .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+    position: relative;
 }
+
+.helper-info {
+    position: absolute;
+    color: white;
+}
+
 .gem-img {
     vertical-align: middle;
     max-height: 50px;
@@ -51,4 +70,10 @@ body {
     padding: 15px;
     color: white;
     margin-top: 15px;
+}
+
+.destroy-gems {
+    background: url('../../assets/img/gem-blow-animation.png') no-repeat 0 0 transparent;
+    width: 80px;
+    height: 80px;
 }
