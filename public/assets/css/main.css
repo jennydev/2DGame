@@ -1,44 +1,144 @@
-body {
-    background-color: #e7e7e7;
-    font-size: 15px;
+body{
+    background: #0d2540;
+}
+
+
+canvas {
+    display: block;
+}
+
+
+.indubitably-text {
+    color:#0097f3;
+}
+
+.smashing-text {
+    color:#f0ff00;
+}
+
+.splendid-text {
+    color: #ff00d6;
+}
+
+.marvelous-text {
+    color:#ff9400;
+}
+
+.unbelievable-text {
+    color:#ff0000;
+}
+
+.beers-collected {
+    margin-top: 15px;
+    border-top: 1px solid #003d50;
+    padding-top: 15px;
+    margin-bottom:15px;
+
+}
+
+.stats {
+    height:406px;
+}
+
+.stats-label {
+    color: #8efdfd;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+
+.beer-container {
+    overflow:hidden;
+}
+.beer-score{
+    font-size: 34px;
+    margin-top: 13px;
+}
+.combos {
+    font-size:16px;
+    padding: 15px;
+    border: 1px solid #004c50;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.5);
+    padding-bottom:10px;
+}
+
+.score {
+    font-size:50px;
+}
+
+.ui-container{
+    background: rgba(0,0,0,0.5);
+    border: 1px solid #00546f;
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    margin-top: 15px;
+}
+
+
+#image-container {
+    position: absolute;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.inner-container {
+    position:relative;
+    width: 616px;
+    padding-top: 286px;
 }
 
 .block-container {
-    background-image: url(../../assets/img/background.jpg);
+    background-image: url(../../assets/img/background.png);
     background-size: cover;
     position: relative;
-    height: 670px;
+    height: 780px;
     overflow: hidden;
 }
 
 .block {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 79px;
+    height: 79px;
     border-radius: 5px;
     white-space: nowrap;
     text-align: center; margin: 1em 0;
-    border: 1px solid rgba(0,0,0,0.5);
+    border: 1px solid rgba(11, 15, 29, 0.5);
     cursor: pointer;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
 }
 
 .block:hover {
-    border: 1px solid rgb(207, 232, 243);
+    border: 1px solid #11c5bf;
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(65, 148, 171,1);
+    -moz-box-shadow: inset 0px 0px 20px 0px rgba(65, 148, 171,1);
+    box-shadow: inset 0px 0px 15px 0px rgba(65, 148, 171,1);
+
 }
 
 .block.active {
-    border: 1px solid yellow;
-    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
-    -moz-box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
-    box-shadow: inset 0px 0px 20px 0px rgba(240,255,156,1);
+
+    border: 1px solid rgb(112, 199, 35);
+    -webkit-box-shadow: inset 0px 0px 20px 0px rgba(80, 222, 90,1);
+    -moz-box-shadow: inset 0px 0px 20px 0px rgba(80, 222, 90,1);
+    box-shadow: inset 0px 0px 20px 0px rgba(80, 222, 90,1);
 }
 
 .black-block{
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.5) !important;
 }
 
 .white-block{
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(20, 37, 56, 0.6);
 }
 
 .helper {
@@ -48,32 +148,66 @@ body {
 .helper-info {
     position: absolute;
     color: white;
+    display:none;
 }
 
 .gem-img {
+    margin-top:3px;
     vertical-align: middle;
-    max-height: 50px;
-    margin-top: 17px;
-    /*max-width: 160px;*/
 }
 
-.background-image{
-    background-image: url(../../assets/img/background.jpg);
-    background-size:cover;
+.score-container {
+    margin-top: 50px;
+    border-top: 1px solid #003d50;
+}
+
+.sound-icon {
+    padding: 7px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.disabled-sound {
+    color:#015a77;
 }
 
 .points {
     width: 100%;
     background: rgba(0,0,0,0.5);
-    border: 1px solid #464646;
+    border: 1px solid #00546f;
     border-radius: 5px;
     padding: 15px;
     color: white;
     margin-top: 15px;
+    height:145px;
 }
 
 .destroy-gems {
-    background: url('../../assets/img/gem-blow-animation.png') no-repeat 0 0 transparent;
-    width: 80px;
-    height: 80px;
+    background: url('../../assets/img/explosion_01.png') no-repeat 0 0 transparent;
+    width: 79px;
+    height: 79px;
+}
+
+.animation{
+    display:none;
+}
+
+@-webkit-keyframes spaceboots {
+    0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+    10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+    30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+    40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+    50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+    74% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+    80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+    90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+    100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+    -webkit-animation-name: spaceboots;
+    -webkit-animation-duration: 0.8s;
+    -webkit-transform-origin: 50% 50%;
 }

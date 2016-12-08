@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>2D Game</title>
+    <title>Christmas Game</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta property="og:image" content="http://www.novarto.com/game/assets/img/fb.jpg" />
+    <meta property="og:url" content="http://www.novarto.com/game/" />
+    <meta property="og:title" content="Christmas Game" />
+    <meta property="og:description" content="Here comes a fun game as a present for you :) May your holidays be filled with lots of happiness!" />
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -17,10 +22,12 @@
     <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
     <script src="js/vendor/underscore-min.js"></script>
     <script src="js/vendor/animatesprite.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.min.js"></script>
 
 </head>
 <body>
+
+
 
 <div class="container">
     <div class="row">
@@ -29,22 +36,78 @@
             <div class="background-image"></div>
             <div class="block-container">
                 <div class="col-md-5">
-                    <div class="game-details">
-                        <div class="score-box">
-                            <p class="points">Score:
+                    <div class="points ui-container">
+                        <img class="pull-left" src="assets/img/novarto-logo.png" style="width: 146px; margin-top: 5px;"/>
+                        <i class="fa fa-volume-up pull-right sound-icon" aria-hidden="true"></i>
+                        <button class="btn pull-right btn-primary" id="new-game"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> New Game</button>
+                        <div class="score-container">
+                            <span style="font-size:40px; margin-top: 7px; display: inline-block;">Score: </span>
 
-                                <button class="btn pull-right" id="new-game">New Game</button>
+                            <span class="score pull-right">0</span>
 
+                        </div>
+
+                    </div>
+                    <div class="ui-container stats">
+                        <span class="stats-label" style="margin-bottom:15px;">Combo Strikes: </span>
+                        <div class="combos">
+                            <p>
+                                <span class="smashing-text">Smashing: </span>
+                                <span class="smashing-text smashing pull-right">0</span>
                             </p>
+                            <p>
+                                <span class="splendid-text">Splendid: </span>
+                                <span class="splendid-text splendid pull-right">0</span>
+                            </p>
+                            <p>
+                                <span class="indubitably-text">Indubitably: </span>
+                                <span class="indubitably-text indubitably pull-right">0</span>
+                            </p>
+                            <p>
+                                <span class="marvelous-text">Marvelous: </span>
+                                <span class="marvelous-text marvelous pull-right">0</span>
+                            </p>
+                            <p>
+                                <span class="unbelievable-text">Unbelievable: </span>
+                                <span class="unbelievable-text unbelievable pull-right">0</span>
+                            </p>
+                        </div>
 
-                            <div class="destroy-gems">
+                        <div class="beer-container">
+                            <div class="beers-collected">
+                                <span class="stats-label">Beers Collected: </span>
                             </div>
+                                <div class="col-sm-6">
+                                    <img class="pull-left" src="assets/img/gem_5.png"/>
+                                    <img class="pull-left"  style="margin-top:19px;" src="assets/img/beer_1_x.png"/>
+                                    <span class="pull-right beer-score beer1">0</span>
+                                </div>
+                                <div class="col-sm-6" style="padding-left:0;">
+                                    <img src="assets/img/gem_6.png"/>
+                                    <img src="assets/img/beer_2_x.png"/>
+                                    <span class="pull-right beer-score beer2">0</span>
+                                </div>
                         </div>
                     </div>
-
                 </div>
-                <div class="col-md-7 " id="gem-container">
 
+                <div class="col-md-7">
+
+
+                    <div id="image-container">
+                        <div class="text-center inner-container">
+                            <img class="start animation" src="assets/img/start.png">
+                            <img class="smashing animation" src="assets/img/smashing.png">
+                            <img class="splendid animation" src="assets/img/splendid.png">
+                            <img class="indubitably animation" src="assets/img/indubitably.png">
+                            <img class="marvelous animation" src="assets/img/marvelous.png">
+                            <img class="unbelievable animation" src="assets/img/unbelievable.png">
+                        </div>
+
+                    </div>
+                    <div id="gem-container">
+
+                    </div>
                 </div>
 
             </div>
@@ -53,6 +116,9 @@
 
 
 </div>
+
+
+
 
 
 
